@@ -8,7 +8,7 @@ return {
 	},
 	config = function()
 		-- Key mappings
-		vim.keymap.set("n", "<C-n>", ":Neotree filesystem reveal left<CR>", {})
+		  vim.keymap.set("n", "<C-n>", ":Neotree toggle<CR>", {})
 
 		-- Setup NeoTree
 		require("neo-tree").setup({
