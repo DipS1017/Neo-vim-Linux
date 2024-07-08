@@ -1,4 +1,6 @@
-return {
+return{
+
+ 'norcalli/nvim-colorizer.lua',
   "numToStr/Comment.nvim",
   config = function()
     require("Comment").setup({
