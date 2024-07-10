@@ -1,12 +1,15 @@
+
 return {
-	{
-		"sainnhe/sonokai",
-		priority = 1000,
-		config = function()
-			vim.g.sonokai_transparent_background = "1"
-			vim.g.sonokai_enable_italic = "1"
-			vim.g.sonokai_style = "andromeda"
-			vim.cmd.colorscheme("sonokai")
-		end,
-	},
+  {
+    "craftzdog/solarized-osaka.nvim",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      require("solarized-osaka").setup({
+        transparent = true,
+      })
+      vim.cmd("colorscheme solarized-osaka")
+    end,
+  },
 }
+
