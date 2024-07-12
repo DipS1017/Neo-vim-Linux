@@ -1,9 +1,8 @@
-
 -- Automatically change directory to the current file's directory
 vim.g.mapleader = " "
 vim.opt.relativenumber = true
 vim.opt.clipboard = "unnamedplus"
-vim.opt.number=true
+vim.opt.number = true
 
 vim.opt.expandtab = true
 vim.opt.tabstop = 2
@@ -11,7 +10,7 @@ vim.opt.softtabstop = 2
 vim.opt.shiftwidth = 2
 vim.opt.smartindent = true
 
-vim.opt.wrap = false
+vim.opt.wrap = true
 
 vim.opt.swapfile = false
 vim.opt.backup = false
@@ -23,11 +22,11 @@ vim.opt.incsearch = true
 vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
---for navigating vim panes 
-vim.keymap.set('n', '<c-k>',':wincmd k<CR>')
-vim.keymap.set('n', '<c-j>',':wincmd j<CR>')
-vim.keymap.set('n', '<c-h>',':wincmd h<CR>')
-vim.keymap.set('n', '<c-l>',':wincmd l<CR>')
-vim.keymap.set('n', '<leader>h',':nohlsearch<CR>' )
+--for navigating vim panes
+vim.keymap.set("n", "<c-k>", ":wincmd k<CR>")
+vim.keymap.set("n", "<c-j>", ":wincmd j<CR>")
+vim.keymap.set("n", "<c-h>", ":wincmd h<CR>")
+vim.keymap.set("n", "<c-l>", ":wincmd l<CR>")
+vim.keymap.set("n", "<leader>h", ":nohlsearch<CR>")
 
 vim.opt.updatetime = 50

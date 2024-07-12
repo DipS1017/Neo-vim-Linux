@@ -14,12 +14,16 @@ return {
     },
   },
   {
+
     "neovim/nvim-lspconfig",
     lazy = false,
     config = function()
-      local capabilities = require("cmp_nvim_lsp").default_capabilities()
+      local capabilities = vim.lsp.protocol.make_client_capabilities()
+      capabilities.textDocument.completion.completionItem.snippetSupport = true
 
       local lspconfig = require("lspconfig")
+      local util = require("lspconfig.util")
+
       lspconfig.tsserver.setup({
         capabilities = capabilities,
       })
@@ -35,9 +39,22 @@ return {
       lspconfig.eslint.setup({
         capabilities = capabilities,
       })
-
       lspconfig.pyright.setup({
         capabilities = capabilities,
+      })
+
+      lspconfig.cssls.setup({
+        capabilities = capabilities,
+        cmd = { "vscode-css-language-server", "--stdio" },
+        filetypes = { "css", "scss", "less" },
+        init_options = { provideFormatter = true },
+        root_dir = util.root_pattern("package.json", ".git"),
+        single_file_support = true,
+        settings = {
+          css = { validate = true },
+          scss = { validate = true },
+          less = { validate = true },
+        },
       })
       vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
       vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
