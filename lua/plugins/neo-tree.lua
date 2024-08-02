@@ -12,6 +12,9 @@ return {
 
     -- Setup NeoTree
     require("neo-tree").setup({
+--[[       window = {
+        position = "right", -- Set the position to 'right' to open NeoTree from the right side
+      }, ]]
       event_handlers = {
         {
           event = "file_opened",
