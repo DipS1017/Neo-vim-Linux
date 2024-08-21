@@ -4,7 +4,7 @@ return{
     dependencies = { "nvim-treesitter/nvim-treesitter" },
     config = function()
       require("nvim-ts-autotag").setup({
-        filetypes = { "html", "xml", "javascript", "javascriptreact", "typescriptreact", "svelte", "vue" }
+        filetypes = { "html", "xml", "javascript", "javascriptreact", "typescriptreact","typescript", "svelte", "vue" }
       })
     end,
   }

@@ -11,11 +11,9 @@ return {
       "rafamadriz/friendly-snippets",
     },
     config = function()
-      local luasnip = require("luasnip")
-
       -- Extend JavaScript snippets to both TypeScript and TypeScriptReact
-      luasnip.filetype_extend("typescript", { "javascript" })
-      luasnip.filetype_extend("typescriptreact", { "javascript" })
+      require("luasnip").filetype_extend("typescript", { "javascript" })
+      require("luasnip").filetype_extend("typescriptreact", { "javascript" })
 
       -- Load snippets from friendly-snippets
       require("luasnip.loaders.from_vscode").lazy_load()

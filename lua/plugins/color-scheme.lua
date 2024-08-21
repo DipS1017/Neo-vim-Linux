@@ -31,7 +31,7 @@
 } ]]
 
 -- ~/.config/nvim/lua/plugins/kanagawa.lua
---[[  return {
+  return {
   'rebelot/kanagawa.nvim',
   config = function()
     require('kanagawa').setup({
@@ -53,7 +53,7 @@ require('kanagawa').setup({
     overrides = function(colors) -- add/modify highlights
         return {}
     end,
-    theme = "wave",              -- Load "wave" theme when 'background' option is not set
+    theme = "dragon",              -- Load "wave" theme when 'background' option is not set
     background = {               -- map the value of 'background' option to a theme
         dark = "dragon",           -- try "dragon" !
         light = "lotus"
@@ -64,7 +64,7 @@ require('kanagawa').setup({
     -- setup must be called before loading
     vim.cmd("colorscheme kanagawa")
   end
-} ]]
+} 
 
 --
 --    return {
@@ -86,7 +86,7 @@ require('kanagawa').setup({
 --   },
 --
 
- return {
+--[[  return {
 	"navarasu/onedark.nvim",
 	config = function()
 		-- Lua
@@ -131,4 +131,4 @@ require('kanagawa').setup({
 		})
     vim.cmd.colorscheme("onedark")
 	end,
-} 
+} ]] 
