@@ -10,7 +10,7 @@ vim.opt.softtabstop = 2
 vim.opt.shiftwidth = 2
 vim.opt.smartindent = true
 
-vim.opt.wrap = true
+vim.opt.wrap =false 
 vim.opt.laststatus=0
 vim.opt.swapfile = false
 vim.opt.backup = false
