@@ -33,3 +33,6 @@ vim.keymap.set("n", "<leader>q", ":quit<Return>", { silent = true }) -- Quits th
 vim.keymap.set("n", "<leader>Q", ":qa<Return>", { silent = true }) -- Quits all windows
 vim.opt.updatetime = 50
 
+vim.keymap.set("n", "<A-l>", "5zl")
+
+vim.keymap.set("n", "<A-h>", "5zh")

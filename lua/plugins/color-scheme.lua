@@ -31,40 +31,40 @@
 } ]]
 
 -- ~/.config/nvim/lua/plugins/kanagawa.lua
-  return {
-  'rebelot/kanagawa.nvim',
-  config = function()
-    require('kanagawa').setup({
-require('kanagawa').setup({
-    compile = false,             -- enable compiling the colorscheme
-    undercurl = true,            -- enable undercurls
-    commentStyle = { italic = true },
-    functionStyle = {},
-    keywordStyle = { italic = true},
-    statementStyle = { bold = true },
-    typeStyle = {},
-    transparent = false,         -- do not set background color
-    dimInactive = false,         -- dim inactive window `:h hl-NormalNC`
-    terminalColors = true,       -- define vim.g.terminal_color_{0,17}
-    colors = {                   -- add/modify theme and palette colors
-        palette = {},
-        theme = { wave = {}, lotus = {}, dragon = {}, all = {} },
-    },
-    overrides = function(colors) -- add/modify highlights
-        return {}
-    end,
-    theme = "dragon",              -- Load "wave" theme when 'background' option is not set
-    background = {               -- map the value of 'background' option to a theme
-        dark = "dragon",           -- try "dragon" !
-        light = "lotus"
-    },
-})
-
-     })
-    -- setup must be called before loading
-    vim.cmd("colorscheme kanagawa")
-  end
-} 
+--   return {
+--   'rebelot/kanagawa.nvim',
+--   config = function()
+--     require('kanagawa').setup({
+-- require('kanagawa').setup({
+--     compile = false,             -- enable compiling the colorscheme
+--     undercurl = true,            -- enable undercurls
+--     commentStyle = { italic = true },
+--     functionStyle = {},
+--     keywordStyle = { italic = true},
+--     statementStyle = { bold = true },
+--     typeStyle = {},
+--     transparent = false,         -- do not set background color
+--     dimInactive = false,         -- dim inactive window `:h hl-NormalNC`
+--     terminalColors = true,       -- define vim.g.terminal_color_{0,17}
+--     colors = {                   -- add/modify theme and palette colors
+--         palette = {},
+--         theme = { wave = {}, lotus = {}, dragon = {}, all = {} },
+--     },
+--     overrides = function(colors) -- add/modify highlights
+--         return {}
+--     end,
+--     theme = "dragon",              -- Load "wave" theme when 'background' option is not set
+--     background = {               -- map the value of 'background' option to a theme
+--         dark = "dragon",           -- try "dragon" !
+--         light = "lotus"
+--     },
+-- })
+--
+--      })
+--     -- setup must be called before loading
+--     vim.cmd("colorscheme kanagawa")
+--   end
+-- } 
 
 --
 --    return {
@@ -86,14 +86,14 @@ require('kanagawa').setup({
 --   },
 --
 
---[[  return {
+  return {
 	"navarasu/onedark.nvim",
 	config = function()
 		-- Lua
 		require("onedark").setup({
 			-- Main options --
 			style = "deep", -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
-			transparent = false, -- Show/hide background
+			transparent = true, -- Show/hide background
 			term_colors = true, -- Change terminal color as per the selected theme style
 			ending_tildes = false, -- Show the end-of-buffer tildes. By default they are hidden
 			cmp_itemkind_reverse = false, -- reverse item kind highlights in cmp menu
@@ -131,4 +131,5 @@ require('kanagawa').setup({
 		})
     vim.cmd.colorscheme("onedark")
 	end,
-} ]] 
+
+}
