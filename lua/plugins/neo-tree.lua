@@ -46,7 +46,6 @@ return {
           highlight = "NeoTreeFileName",
         },
       },
-      
       window = {
         position = "left",  -- Set the position to 'right' to open NeoTree from the right side
       },

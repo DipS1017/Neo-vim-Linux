@@ -37,8 +37,8 @@ return {
     end, { desc = 'Find Old Files' })
 
     vim.keymap.set('n', '<leader>fs', function()
-      require('fzf-lua').search()
-    end, { desc = 'Search in File' })
+      require('fzf-lua').files()
+    end, { desc = 'File search' })
 
     -- Image Previewer (optional)
     local img_previewer ---@type string[]?

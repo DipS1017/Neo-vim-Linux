@@ -38,3 +38,19 @@ vim.opt.updatetime = 50
 vim.keymap.set("n", "<A-l>", "5zl")
 
 vim.keymap.set("n", "<A-h>", "5zh")
+
+
+
+vim.keymap.set('n', '<leader>q', function()
+  -- Check if there are unsaved changes
+  if vim.bo.modified then
+    local choice = vim.fn.confirm("You have unsaved changes. Do you want to save them?", "&Yes\n&No\n&Cancel", 2)
+    if choice == 1 then
+      vim.cmd('wq')  -- Save and quit
+    elseif choice == 2 then
+      vim.cmd('q!')  -- Quit without saving
+    end
+  else
+    vim.cmd('q')  -- Quit if no changes
+  end
+end, { desc = 'Quit with save prompt' })
