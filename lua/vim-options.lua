@@ -38,7 +38,8 @@ vim.opt.updatetime = 50
 vim.keymap.set("n", "<A-l>", "5zl")
 
 vim.keymap.set("n", "<A-h>", "5zh")
-
+vim.keymap.set("n","<A-j>",":m .+1<CR>==")
+vim.keymap.set("n","<A-k>",":m .-2<CR>==")
 
 
 vim.keymap.set('n', '<leader>q', function()

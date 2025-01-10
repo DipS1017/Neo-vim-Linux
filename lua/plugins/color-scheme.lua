@@ -18,7 +18,7 @@
 	},
 } ]]
 
---[[ return false{
+--[[  return {
 	{
 		"craftzdog/solarized-osaka.nvim",
 		lazy = false,
@@ -91,7 +91,7 @@
 		-- Lua
 		require("onedark").setup({
 			-- Main options --
-			style = "deep", -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
+			style = "warmer", -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
 			transparent = true, -- Show/hide background
 			term_colors = true, -- Change terminal color as per the selected theme style
 			ending_tildes = false, -- Show the end-of-buffer tildes. By default they are hidden
@@ -131,9 +131,8 @@
     vim.cmd.colorscheme("onedark")
 	end,
 
-} ]]
-
-
+}
+ ]]
 return{
   {
     "rose-pine/neovim",
@@ -143,7 +142,7 @@ return{
     config = function()
       -- Optionally configure the colorscheme with italics enabled for certain syntax groups
       require("rose-pine").setup({
-        variant = "moon", -- Options: 'main', 'moon', 'dawn'
+        variant = "main", -- Options: 'main', 'moon', 'dawn'
         dark_variant = "main",
         disable_background = true,
         disable_float_background = true,
@@ -159,4 +158,3 @@ return{
     end,
   },
 }
-
