@@ -9,7 +9,7 @@ return {
   },
   config = function()
     -- Key mappings
-    vim.keymap.set("n", "<C-n>", ":Neotree toggle<CR>", {})
+    vim.keymap.set("n", "<leader>e", ":Neotree toggle<CR>", {})
 
     -- Diagnostic Signs Definition
     vim.fn.sign_define("DiagnosticSignError", { text = " ", texthl = "DiagnosticSignError" })

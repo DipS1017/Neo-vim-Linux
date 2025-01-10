@@ -6,7 +6,7 @@ return {
       require("nvim-highlight-colors").setup {
         ---Render style
         ---@usage 'background'|'foreground'|'virtual'
-        render = 'virtual',
+        render = 'background',
 
         ---Set virtual symbol (requires render to be set to 'virtual')
         virtual_symbol = '■',
@@ -43,7 +43,7 @@ return {
         enable_named_colors = true,
 
         ---Highlight tailwind colors, e.g. 'bg-blue-500'
-        enable_tailwind = false,
+        enable_tailwind = true,
 
         ---Set custom colors
         ---Label must be properly escaped with '%' to adhere to `string.gmatch`
