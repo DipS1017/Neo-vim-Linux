@@ -16,9 +16,11 @@ return {
   {
 
     "neovim/nvim-lspconfig",
+    dependencies={"saghen/blink.cmp"},
     lazy = false,
     config = function()
       local capabilities = vim.lsp.protocol.make_client_capabilities()
+      local capabilities = require("blink.cmp").get_lsp_capabilities(capabilities)
       capabilities.textDocument.completion.completionItem.snippetSupport = true
 
       local lspconfig = require("lspconfig")
@@ -62,13 +64,13 @@ lspconfig.omnisharp.setup({
           less = { validate = true },
         },
       })
-      -- vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
+      vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
       vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
       vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, {})
       vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, {})
 
 -- Show diagnostics in a floating window
-vim.keymap.set("n", "K", vim.diagnostic.open_float, { desc = "Show diagnostics" })
+vim.keymap.set("n", "<leader>k", vim.diagnostic.open_float, { desc = "Show diagnostics" })
     end,
   },
 }
