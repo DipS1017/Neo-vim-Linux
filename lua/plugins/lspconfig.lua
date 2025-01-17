@@ -14,14 +14,10 @@ return {
     },
   },
   {
-
     "neovim/nvim-lspconfig",
-    dependencies={"saghen/blink.cmp"},
     lazy = false,
     config = function()
-      local capabilities = vim.lsp.protocol.make_client_capabilities()
-      local capabilities = require("blink.cmp").get_lsp_capabilities(capabilities)
-      capabilities.textDocument.completion.completionItem.snippetSupport = true
+      local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
       local lspconfig = require("lspconfig")
       local util = require("lspconfig.util")
@@ -30,7 +26,7 @@ return {
         capabilities = capabilities,
       })
       lspconfig.tailwindcss.setup({
-        capabilities=capabilities,
+        capabilities = capabilities,
       })
       lspconfig.html.setup({
         capabilities = capabilities,
@@ -47,7 +43,7 @@ return {
       lspconfig.pyright.setup({
         capabilities = capabilities,
       })
-lspconfig.omnisharp.setup({
+      lspconfig.omnisharp.setup({
         capabilities = capabilities,
       })
 
@@ -69,8 +65,8 @@ lspconfig.omnisharp.setup({
       vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, {})
       vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, {})
 
--- Show diagnostics in a floating window
-vim.keymap.set("n", "<leader>k", vim.diagnostic.open_float, { desc = "Show diagnostics" })
+      -- Show diagnostics in a floating window
+      vim.keymap.set("n", "<leader>k", vim.diagnostic.open_float, { desc = "Show diagnostics" })
     end,
   },
 }
