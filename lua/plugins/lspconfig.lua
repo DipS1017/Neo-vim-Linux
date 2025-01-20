@@ -46,6 +46,30 @@ return {
       lspconfig.omnisharp.setup({
         capabilities = capabilities,
       })
+      lspconfig.gopls.setup({
+        capabilities = capabilities,
+
+        settings = {
+          gopls = {
+            completeUnimported = true,
+            usePlaceholders = true,
+            gofumpt = true,
+            staticcheck = true,
+            analyses = {
+              unusedparams = true,
+            },
+            hints = {
+              assignVariableTypes = true,
+              compositeLiteralFields = true,
+              compositeLiteralTypes = true,
+              constantValues = true,
+              functionTypeParameters = true,
+              parameterNames = true,
+              rangeVariableTypes = true,
+            },
+          },
+        },
+      })
 
       lspconfig.cssls.setup({
         capabilities = capabilities,
